@@ -61,3 +61,7 @@ This is a transparent review-priority heuristic, not a probability of ignition, 
 NASA FIRMS describes VIIRS fire-pixel latitude/longitude as the center of a nominal 375 m pixel at nadir; scan and track describe actual pixel size. Acquisition date/time is the satellite overpass time in UTC. FRP is reported in megawatts, and confidence is an algorithm-derived quality indicator for an individual hotspot. Numeric confidence values are retained numerically; categorical values remain low/nominal/high. See the official [VIIRS FIRMS field description](https://firms.modaps.eosdis.nasa.gov/content/descriptions/FIRMS_VIIRS_Firehotspots.html) and [FIRMS API guidance](https://firms2.modaps.eosdis.nasa.gov/content/academy/data_api/firms_api_use.html).
 
 This version does not call the FIRMS API or retrieve live data. Users download a CSV from NASA FIRMS and provide it locally.
+
+## Working with coding agents
+
+Start with [`AGENTS.md`](AGENTS.md) for repository-wide invariants, architecture, commands and review rules. Use [`SKILLS.md`](SKILLS.md) to select a task-specific workflow. Canonical skills are stored in `.agents/skills/`; Claude Code discovery entries are stored in `.claude/skills/`. Read the relevant skill before changing domain logic. All agent output remains subject to human review; documentation and tests do not replace scientific, operational or safety validation.
