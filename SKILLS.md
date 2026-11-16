@@ -26,3 +26,10 @@ Design leakage-resistant historical evaluation for event clustering and future w
 
 ## Required workflow
 Inspect product/source metadata, state the scientific task, preserve raw provenance, add regression fixtures, run exact tests and document limitations. Codex discovers `.agents/skills`; Claude Code discovers `.claude/skills`; other models should read this index and open canonical skill text.
+
+## `multi-agent-review-handoff`
+
+Coordinate satellite-product research, geospatial implementation and independent wildfire-evaluation review for Flare-Hunt. Use for ingestion, clustering, validation or forecasting work.
+
+- Canonical: [`.agents/skills/multi-agent-review-handoff/SKILL.md`](.agents/skills/multi-agent-review-handoff/SKILL.md)
+- Claude discovery: [`.claude/skills/multi-agent-review-handoff/SKILL.md`](.claude/skills/multi-agent-review-handoff/SKILL.md)
