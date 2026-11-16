@@ -250,7 +250,7 @@ def main(argv: list[str] | None = None) -> int:
             raise FileExistsError("output report already exists; choose a new path or pass --force")
         result = analyze_file(args.input, args.radius_km, args.time_window_hours)
         args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(json.dumps(result, indent=2) + "\\n", encoding="utf-8")
+        args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
         print(json.dumps(result["summary"], indent=2))
         return 0
     except (OSError, ValueError, csv.Error) as exc:
