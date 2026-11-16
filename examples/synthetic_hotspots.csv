@@ -1,0 +1,5 @@
+latitude,longitude,acq_date,acq_time,frp,confidence,satellite,version,daynight
+17.3850,78.4867,2026-04-10,0315,2.1,nominal,N20,synthetic-fixture,N
+17.3856,78.4869,2026-04-10,0320,3.4,high,N20,synthetic-fixture,N
+17.3861,78.4872,2026-04-10,0330,1.8,nominal,N20,synthetic-fixture,N
+18.0000,79.0000,2026-04-10,0430,7.2,high,N20,synthetic-fixture,N
