@@ -57,7 +57,6 @@ def test_temperature_rate_of_rise_is_calculated_per_sensor():
         ]
     )
 
-    by_sensor = {(item.sensor_id, item.timestamp): item for item in results}
     a_last = next(item for item in results if item.sensor_id == "A" and item.rate_of_rise_c_per_min is not None)
     b_last = next(item for item in results if item.sensor_id == "B" and item.rate_of_rise_c_per_min is not None)
 
@@ -73,6 +72,8 @@ def test_duplicate_timestamp_for_one_sensor_is_rejected():
 def test_sensor_values_are_range_checked():
     with pytest.raises(ValueError, match="smoke_index"):
         score_reading(reading(smoke=1.5), None)
+    with pytest.raises(ValueError, match="finite"):
+        score_reading(reading(temp=float("nan")), None)
 
 
 def test_csv_ingestion_and_output(tmp_path):
