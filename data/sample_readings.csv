@@ -1,0 +1,5 @@
+sensor_id,timestamp,temperature_c,smoke_index,co_ppm,flame_signal
+SYNTH-01,2026-01-01T00:00:00Z,27.0,0.05,2.0,0
+SYNTH-01,2026-01-01T00:01:00Z,31.0,0.08,3.0,0
+SYNTH-01,2026-01-01T00:02:00Z,40.0,0.42,28.0,0
+SYNTH-01,2026-01-01T00:03:00Z,52.0,0.70,55.0,1

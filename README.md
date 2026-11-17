@@ -1,19 +1,21 @@
 # Flare-Hunt
-Detect and Rank early fire flare-ups before they spread.
 
----
+**Experimental fire-flare sensor screening.** This project starts with local CSV time-series from temperature, smoke, carbon-monoxide and flame sensors. It calculates per-sensor temperature rate-of-rise and applies a transparent rule-based screen.
 
-## Engineering Audit & Handover — 2026-11-17
+## Run
 
-**Reviewed commit:** `d5127fdfac4f87042417ebddd759b56955256e0e` (`main`).
+Install with `python -m pip install -e .[dev]`, then run `flare-hunt data/sample_readings.csv`.
 
-### Confirmed findings
-- The reviewed branch contains only `README.md` and `LICENSE`; no executable detection, ranking, data-ingestion, or alerting implementation was found.
-- The fire flare-up detection and ranking description is a project objective, not a demonstrated capability on this branch.
+CSV columns: sensor_id, timestamp (ISO-8601), temperature_c, smoke_index (0..1), co_ppm, flame_signal (0/1/true/false).
 
-### Next actions
-1. Define the data source, sensor modality, flare-up label, and alert threshold.
-2. Implement a small offline evaluation using sourced, labelled fire/satellite/sensor data.
-3. Measure false alarms and missed detections before presenting the tool as an early-warning system.
+The sample dataset is synthetic and is only a demonstration. The score is not a probability, calibrated model, certified detector or life-safety alarm. Do not use this project as the sole warning system. Before any real deployment, collect labelled data for the actual sensor models and environment, calibrate thresholds, measure false positives/false negatives, test sensor faults, and obtain fire-safety engineering review.
 
-**Verification status:** source-tree inspection only; no runnable product or test suite verified.
+## Evaluation priorities
+
+1. Build a labelled dataset with normal, smouldering, flare-up and sensor-fault conditions.
+2. Split by site and time, not random rows, to reduce leakage.
+3. Report precision, recall, missed-event rate, false alarms per sensor-day and detection lead time.
+4. Add sensor health checks, missing-data alarms, drift monitoring and hysteresis.
+5. Keep certified alarms and emergency response systems independent of this prototype.
+
+Run tests with `pytest -q`.

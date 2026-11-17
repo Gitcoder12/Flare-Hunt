@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flare-hunt"
+version = "0.1.0"
+description = "Experimental fire-flare sensor screening from CSV time series"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+flare-hunt = "flare_hunt:main"
+
+[tool.setuptools]
+py-modules = ["flare_hunt"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
