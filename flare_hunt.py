@@ -89,6 +89,17 @@ def score_reading(
     reading: Reading, rate_of_rise_c_per_min: float | None
 ) -> FlareAssessment:
     """Apply documented threshold rules; the score is not a probability."""
+    numeric_values = (
+        reading.temperature_c,
+        reading.smoke_index,
+        reading.co_ppm,
+    )
+    if any(not math.isfinite(value) for value in numeric_values):
+        raise ValueError("sensor values must be finite")
+    if not 0 <= reading.smoke_index <= 1 or reading.co_ppm < 0:
+        raise ValueError("smoke_index must be 0..1 and co_ppm must be non-negative")
+    if rate_of_rise_c_per_min is not None and not math.isfinite(rate_of_rise_c_per_min):
+        raise ValueError("rate_of_rise_c_per_min must be finite")
     score = 0
     signals: list[str] = []
 
