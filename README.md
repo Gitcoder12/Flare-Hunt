@@ -19,3 +19,10 @@ The sample dataset is synthetic and is only a demonstration. The score is not a 
 5. Keep certified alarms and emergency response systems independent of this prototype.
 
 Run tests with `pytest -q`.
+
+---
+
+## Examples Used
+- Screening a temperature rate-of-rise during a simulated smouldering event
+- Comparing smoke, carbon-monoxide, and flame sensor readings
+- Detecting missing or faulty sensor readings in a test dataset
