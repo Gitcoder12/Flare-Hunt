@@ -19,3 +19,21 @@ The sample dataset is synthetic and is only a demonstration. The score is not a 
 5. Keep certified alarms and emergency response systems independent of this prototype.
 
 Run tests with `pytest -q`.
+
+
+---
+
+## Branch Activity & Development History
+
+**Audit date:** 2026-11-18 · **Comparison base:** `main`
+
+| Branch | Difference from `main` | Observed work / changed paths |
+|---|---:|---|
+| `feat/firms-hotspot-clustering-mvp-20261116` | 20 ahead / 2 behind | Satellite hotspot ingestion/analysis skills, agent guidance, synthetic sample data, hotspot engine, tests and project-status docs |
+| `feat/telemetry-anomaly-mvp` | 8 / 1 | Telemetry anomaly detection, sample readings, CI workflow, package configuration and tests |
+
+### Open pull requests observed during this audit
+
+- [PR #1 — satellite hotspot MVP](https://github.com/Gitcoder12/Flare-Hunt/pull/1)
+
+**Review note:** The hotspot branch includes clearly named synthetic example data; preserve that distinction from real satellite observations. Verify data provenance, clustering assumptions and tests before merging. No branches have been merged or deleted by this documentation update.
